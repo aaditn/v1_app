@@ -1,12 +1,12 @@
 "use client";
 import React, { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
-import config from './config';
+import "./lessons.css";
+
 const MyComponent = () => {
   const editorRef = useRef(null);
   const [outputData, setOutputData] = useState('');
-  const hackerEarthAuthId = '70d786f634c438ecddb8336b4b7816bbc76d141c00a6.api.hackerearth.com';
-  const hackerEarthSecretKey = '7c93441173957850cdd7eb115aa1cda2254b6442';
+
   useEffect(() => {
     let editor = null;
     const initializeAceEditor = () => {
@@ -16,54 +16,89 @@ const MyComponent = () => {
       editorRef.current.editor = ace.edit(editorRef.current);
       editorRef.current.editor.setTheme('ace/theme/monokai');
       editorRef.current.editor.session.setMode('ace/mode/java');
-      editorRef.current.editor.setValue(`public class Main {
-        public static void main(String[] args) {   
-        }
-      }`);
+      editorRef.current.editor.setValue(`
+public class Main {
+  public static void main(String[] args) {
+    
+  }
+}`);
       editorRef.current.editor.clearSelection();
     };
-    if (typeof window !== 'undefined') {
-      initializeAceEditor();
-    }
+    
+    initializeAceEditor();
+    
     return () => {
       if (editorRef.current.editor) {
         editorRef.current.editor.destroy();
       }
     };
   }, []);
+
   const executeCode = async () => {
     try {
-      const serverUrl = 'https://api.hackerearth.com/v4/partner/code-evaluation/submissions/'; // HackerEarth API endpoin
       if (editorRef.current.editor) {
         const code = editorRef.current.editor.getValue();
+  
         const requestData = {
-          source: code,
-          language: 'JAVA14',
-          input: '', // Optional: Provide input if required by the code
+          code,
         };
-        console.log(5);
-        const config = {
-          headers: {
-            'Content-Type': 'application/json',
-            'Client-Id': hackerEarthAuthId,
-            'Client-Secret': hackerEarthSecretKey,
-          },
-        };
-        const executionResponse = await axios.post(serverUrl, requestData, config);
-        const output = executionResponse.data.run_status.output;
-        console.log(output);
-        setOutputData(output);
+  
+        const response = await axios.post('http://localhost:4000/execute', requestData);
+  
+        if (response.status === 200) {
+          setOutputData(response.data.output);
+        } else {
+          console.error('Execution failed. Response:', response);
+        }
       }
     } catch (error) {
       console.error('Execution failed. Error:', error);
     }
   };
+  
 
   return (
     <div>
-      <div ref={editorRef} style={{ width: '100%', height: '300px' }}></div>
-      <button onClick={executeCode}>Execute</button>
-      {outputData && <pre>{outputData}</pre>}
+      <div class="header">
+        <h3>Project Code</h3>
+        <h3>Unit 1: Introduction to Java</h3>
+      </div>
+
+      <div class="next">
+        <h3>Next</h3>
+      </div>
+
+      <div class="title">
+        <h1>Lesson 1</h1> 
+        <h2>Printing Hello World</h2>
+      </div> 
+
+      <div class="video">
+        <h1>How Does Java Work?</h1>
+        <video width="600" height="450" controls>
+            <source src="./Sample.mp4" type="video/mp4"></source>
+        </video>
+      </div>
+
+      <div>
+        <button onClick={executeCode}>Run</button> 
+      </div>
+      <div class="compiler">
+        <h1>Run Your Code</h1>
+       <br></br>
+
+        <div ref={editorRef} class="box">
+           
+        </div>
+        <div class="console">
+                <div class="consoleHeader">
+                  
+                    Console
+                </div>
+                {outputData && <pre>{outputData}</pre>}
+            </div>
+    
+      </div>
     </div>
   );
 };

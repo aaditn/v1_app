@@ -6,5 +6,14 @@ const nextConfig = {
         path: "",
     },
 };
-
-module.exports = nextConfig
+module.exports = {
+    generateStaticParams: async () => {
+      return [
+        { route: '/' },
+       
+        // Add more routes as needed
+      ];
+    },
+    output: 'export',
+  };
+  
