@@ -216,9 +216,151 @@ public class Main {
     );
   };
 
+  const unitPage = () => {
+    const cssStyles = {
+      body: {
+        backgroundColor: "azure",
+        margin: "0",
+        padding: "0",
+      },
+      header: {
+        marginBottom: "10px",
+        width: "100%",
+        height: "58px",
+        backgroundColor: "#77c8a1",
+      },
+      main: {
+        width: "100%",
+        height: "100%",
+        alignItems: "center",
+        textAlign: "center",
+      },
+      "h1.titlepage": {
+        color: "#77c8a1",
+        fontFamily: "'Jost', sans-serif",
+        margin: "50px",
+        fontSize: "60px",
+      },
+      "h4": {
+        color: "#77c8a1",
+        fontFamily: "'Jost', sans-serif",
+      },
+      "h2.home": {
+        color: "#77c8a1",
+        display: "inline",
+        float: "left",
+      },
+      "h4.headerlink": {
+        display: "inline",
+        float: "right",
+        backgroundColor: "none",
+      },
+      "a.home": {
+        color: "#ffffff",
+        marginLeft: "10px",
+      },
+      "a.login": {
+        color: "#ffffff",
+        backgroundColor: "none",
+        marginRight: "10px",
+      },
+      "div.unitLink": {
+        textDecoration: "none",
+        color: "#77c8a1",
+        display: "intline-block",
+        position: "relative",
+        marginLeft: "0px",
+        float: "middle",
+        textAlign: "center",
+        justifyContent: "center",
+        backgroundColor: "none",
+        padding: "0px",
+        borderWidth: "2px",
+        borderColor: "#8f7d95",
+        width: "90%",
+        left: "5%",
+        right: "5%",
+      },
+      "div.unitLink:after": {
+        content: "''",
+        position: "absolute",
+        width: "100%",
+        transform: "scaleX(0)",
+        height: "2px",
+        bottom: "0",
+        left: "0",
+        backgroundColor: "#8f7d95",
+        transformOrigin: "bottom right",
+        transition: "transform 0.5s ease-out",
+      },
+      "div.unitLink:hover": {
+        backgroundColor: "#feffff",
+      },
+      "div.unitLink:hover:after": {
+        transform: "scaleX(1)",
+        transformOrigin: "bottom left",
+        textDecoration: "underline #ca97da",
+        textDecorationThickness: "15%",
+        backgroundColor: "#b1b7bb",
+      },
+      "a": {
+        height: "100%",
+        width: "100%",
+      },
+      "button.lessonpage": {
+        margin: "20px",
+        height: "108px",
+        width: "90%",
+      },
+      "h1": {
+        color: "#77c8a1",
+        fontSize: "30px",
+        fontFamily: "'Jost', sans-serif",
+      },
+      };
+    return (
+      <>
+  <div>
+    <header style={cssStyles.header}>
+      <h2 className="home">
+        <a className="home" href="index.html" style={cssStyles.link}>
+          ProjectCode
+        </a>
+      </h2>
+      <h4 className="headerlink">
+        <a className="login" href="login.html" style={cssStyles.link}>
+          Login
+        </a>
+      </h4>
+    </header>
+    <div style={cssStyles.mainunit}>
+      <div style={cssStyles.unitcontainer}>
+        <h1 style={cssStyles.unit}>{unitTitle[currentUnit]}</h1>
+        <div style={cssStyles.unitpic}>
+          <img style={cssStyles.unitimg} src="https://via.placeholder.com/300" alt="unit" />
+        </div>
+        <p style={cssStyles.unitinfo}>
+          Learn the fundamentals of programming using Java. Start from the basics and gradually
+          work your way up to more advanced topics. Each unit consists of multiple lessons with
+          video tutorials, coding exercises, and quizzes to test your knowledge.
+        </p>
+        <div style={cssStyles.unitnav}>
+          <button style={cssStyles.navbtn} onClick={() => goToLesson(currentUnit + 1, 1)}>Lesson 1</button>
+          <button style={cssStyles.navbtn} onClick={() => goToLesson(currentUnit + 1, 2)}>Lesson 2</button>
+          <button style={cssStyles.navbtn} onClick={() => goToLesson(currentUnit + 1, 3)}>Lesson 3</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</>
+
+    );
+  };
 
   return (
-    unitPage()
+    <>
+      {currentUnit === 0 ? unitPage() : lessonPage()}
+    </>
   );
 };
 
