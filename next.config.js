@@ -7,6 +7,7 @@ const nextConfig = {
     },
 };
 module.exports = {
+
     generateStaticParams: async () => {
       return [
         { route: '/' },
@@ -15,5 +16,6 @@ module.exports = {
       ];
     },
     output: 'export',
+    
   };
   

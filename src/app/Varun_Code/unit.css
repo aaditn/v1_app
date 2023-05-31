@@ -1,0 +1,93 @@
+body{
+    background-color: azure;
+    margin: 0;
+    padding: 0;
+}
+header{
+    margin-bottom: 10px;
+    width: 100%;
+    height: 58px;
+    background-color: #77c8a1;
+}
+main.Home-Site-content{
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    text-align: center;
+    
+}
+h1.titlepage{
+    color: #77c8a1;
+    font-family: 'Jost', sans-serif;
+    margin: 50px;
+    font-size: 60px;
+}
+h4{
+    color: #77c8a1;
+    font-family: 'Jost', sans-serif;
+}
+h2.home{
+    color: #77c8a1;
+    display: inline;
+    float: left;
+}
+h4.headerlink{
+    display: inline;
+    float: right;
+    background-color: none;
+}
+a.home{
+    color: #ffffff;
+    margin-left: 10px;
+}
+a.login{
+    color: #ffffff;
+    background-color: none;
+    margin-right: 10px;
+}
+a.unitlink{
+    text-decoration: none;
+    color:#77c8a1;
+    display: intline-block;
+    position: relative;
+    margin-left: 0px;
+    float: middle;
+    text-align: center;
+    justify-content: center;
+    background-color: none;
+}
+a.unitlink:after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ca97da;
+    transform-origin: bottom right;
+    transition: transform 0.5s ease-out;
+
+}
+a.unitlink:hover{
+    background-color: #b1b7bb;
+}   
+a.unitlink:hover:after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+    text-decoration: underline #ca97da;
+    text-decoration-thickness: 15%;
+    background-color: #b1b7bb;
+}
+a{
+    height: 100%;
+    width: 100%;
+}
+button.lessonpage{
+    margin: 20px;
+    height: 108px;
+    width: 90%;
+}
+h1{
+    color: #77c8a1;
+}

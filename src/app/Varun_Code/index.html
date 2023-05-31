@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ProjectCode</title>
+<link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<style>
+  .dropbtn {
+  background-color: #3498DB;
+  color: rgb(36, 34, 34);
+  
+  font-size: 160px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #b1b7bb;
+}
+
+.dropdown {
+  position: relative;
+  display: block;
+}
+
+.dropdown-content {
+  display:none;
+  margin-left: 20px;
+  position: relative;
+  background-color: #f1f1f1;
+  min-width: 80%;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 0;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+</style>
+</head>
+<body>
+  <header id="pageheader">
+    <h2 class="home">
+      <a class="home" href="index.html" style="text-decoration: none;">
+          ProjectCode
+      </a>
+    </h2>
+    <h4 class="headerlink">
+      <a class="login" href="login.html" style="text-decoration: none;">Login</a>
+    </h4>
+  </header>
+<main class="Home-Site-content">
+<h1>Intro to Java</h1>
+<div>
+<div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn" id="Unit1">
+    <i onclick="myFunction()" class="fa fa-caret-down"></i>
+    <span><a href="unitOne1.html" class="unitlink">Unit 1</a></span>
+  </button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#home">Lesson 1</a>
+    <a href="#about">Lesson 2</a>
+    <a href="#contact">Lesson 3</a>
+  </div>
+</div>  
+
+<div class="dropdown">
+  <button onclick="unitTwo()" class="dropbtn" id="Unit1">
+    <i onclick="myFunction()" class="fa fa-caret-down"></i>
+    <span><a href="unitTwo2.html" class="unitlink">Unit 2</a></span>
+  </button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#home">Lesson 1</a>
+    <a href="#about">Lesson 2</a>
+    <a href="#contact">Lesson 3</a>
+  </div>
+</div>
+
+<div class="dropdown">
+  <button onclick="unitThree()" class="dropbtn" id="Unit1">
+    <i onclick="myFunction()" class="fa fa-caret-down"></i>
+    <span><a href="unitThree3.html" class="unitlink">Unit 3</a></span>
+  </button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#home">Lesson 1</a>
+    <a href="#about">Lesson 2</a>
+    <a href="#contact">Lesson 3</a>
+  </div>
+</div>
+
+<div class="dropdown">
+  <button onclick="unitFour()" class="dropbtn" id="Unit1">
+    <i onclick="myFunction()" class="fa fa-caret-down"></i>
+    <span><a href="unitFour4.html" class="unitlink">Unit 4</a></span>
+  </button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#home">Lesson 1</a>
+    <a href="#about">Lesson 2</a>
+    <a href="#contact">Lesson 3</a>
+  </div>
+</div>
+
+<div class="dropdown">
+  <button onclick="unitFive()" class="dropbtn" id="Unit1">
+    <i onclick="myFunction()" class="fa fa-caret-down"></i>
+    <span><a href="unitFive5.html" class="unitlink">Unit 5</a></span>
+  </button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#home">Lesson 1</a>
+    <a href="#about">Lesson 2</a>
+    <a href="#contact">Lesson 3</a>
+  </div>
+</div>
+
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+function unitTwo(){
+  document.getElementById("unit2").classList.toggle("show");
+}
+function unitThree(){
+  document.getElementById("unit3").classList.toggle("show");
+}
+function unitFour(){
+  document.getElementById("unit4").classList.toggle("show");
+}
+function unitFive(){
+  document.getElementById("unit5").classList.toggle("show");
+}
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn' || '.fa-caret-down')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+</script>
+</main>
+</body>
+</html>

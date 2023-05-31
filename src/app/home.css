@@ -1,0 +1,122 @@
+body{
+    background-color: azure;
+    margin: 0;
+    padding: 0;
+}
+header{
+    margin-bottom: 10px;
+    width: 100%;
+    height: 58px;
+    background-color: #77c8a1;
+}
+main.Home-Site-content{
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    text-align: center;
+    
+}
+h1{
+    color: #77c8a1;
+    font-family: 'Jost', sans-serif;
+    margin: 50px;
+}
+
+button.dropbtn{
+    min-width: 80%;
+	height: 100px;
+	justify-content: center;
+	color: #fff;
+	background: #e2dfdf;
+	font-weight: bold;
+	margin: 30px;
+    margin-bottom: 0;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    align-items: center;
+    font-size: 36px;
+}
+h3{
+    color: #77c8a1;
+    font-family: 'Jost', sans-serif;
+    text-align: center;
+    vertical-align: text-top;
+    display: inline;
+}
+i.fa-caret-down{
+    margin-top: 0px;
+    margin-right: 0;
+    margin-left: 0px;
+    float: left;
+    font-size: 36px;
+    justify-content: center;
+    padding: 16px;
+    cursor: pointer;
+    color: #77c8a1;
+}
+i.fa-caret-down:hover{
+    transition: 0.5s ease-in-out; 
+    color: #a9d7c1;
+}
+h4{
+    color: #77c8a1;
+    font-family: 'Jost', sans-serif;
+}
+h2.home{
+    color: #77c8a1;
+    display: inline;
+    float: left;
+}
+h4.headerlink{
+    display: inline;
+    float: right;
+    background-color: none;
+}
+a.home{
+    color: #ffffff;
+    margin-left: 10px;
+}
+a.login{
+    color: #ffffff;
+    background-color: none;
+    margin-right: 10px;
+}
+a.unitlink{
+    text-decoration: none;
+    color:#77c8a1;
+    display: intline-block;
+    position: relative;
+    margin-left: 0px;
+    float: middle;
+    text-align: center;
+    justify-content: center;
+    background-color: none;
+}
+a.unitlink:after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ca97da;
+    transform-origin: bottom right;
+    transition: transform 0.5s ease-out;
+
+}
+a.unitlink:hover{
+    background-color: #b1b7bb;
+}   
+a.unitlink:hover:after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+    text-decoration: underline #ca97da;
+    text-decoration-thickness: 15%;
+    background-color: #b1b7bb;
+}
